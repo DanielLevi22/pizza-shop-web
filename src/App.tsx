@@ -1,14 +1,11 @@
-import { useState } from 'react'
-
-
-function App() {
-  const [count, setCount] = useState(0)
+import { Button } from './components/ui/button'
+import './global.css'
+export function App() {
 
   return (
-    <>
-      
-    </>
+    <div className='flex justify-center items-center h-screen'>
+      <Button className='text-yellow-200'>Seja</Button>
+    </div>
   )
 }
 
-export default App
