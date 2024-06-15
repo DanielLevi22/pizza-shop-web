@@ -44,14 +44,7 @@ export function Orders() {
             </Table>
           </div>
 
-          {
-            <Pagination
-              onPageChange={() => ({})}
-              pageIndex={0}
-              totalCount={105}
-              perPage={10}
-            />
-          }
+          {<Pagination pageIndex={0} totalCount={105} perPage={10} />}
         </div>
       </div>
     </>
