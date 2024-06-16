@@ -11,14 +11,14 @@ interface PaginationProps {
   pageIndex: number
   totalCount: number
   perPage: number
-  onPageChange?: (pageIndex: number) => Promise<void> | void
+  onPageChange: (pageIndex: number) => Promise<void> | void
 }
 
 export function Pagination({
   pageIndex,
   perPage,
   totalCount,
-  // onPageChange,
+  onPageChange,
 }: PaginationProps) {
   const pages = Math.ceil(totalCount / perPage) || 1
 
@@ -34,7 +34,7 @@ export function Pagination({
         </div>
         <div className="flex items-center gap-2">
           <Button
-            // onClick={() => onPageChange(0)}
+            onClick={() => onPageChange(0)}
             variant="outline"
             className="h-8 w-8 p-0"
             disabled={pageIndex === 0}
@@ -43,7 +43,7 @@ export function Pagination({
             <span className="sr-only">Primeira página</span>
           </Button>
           <Button
-            // onClick={() => onPageChange(pageIndex - 1)}
+            onClick={() => onPageChange(pageIndex - 1)}
             variant="outline"
             className="h-8 w-8 p-0"
             disabled={pageIndex === 0}
@@ -52,7 +52,7 @@ export function Pagination({
             <span className="sr-only">Página anterior</span>
           </Button>
           <Button
-            // onClick={() => onPageChange(pageIndex + 1)}
+            onClick={() => onPageChange(pageIndex + 1)}
             variant="outline"
             className="h-8 w-8 p-0"
             disabled={pages <= pageIndex + 1}
@@ -61,7 +61,7 @@ export function Pagination({
             <span className="sr-only">Próxima página</span>
           </Button>
           <Button
-            // onClick={() => onPageChange(pages - 1)}
+            onClick={() => onPageChange(pages - 1)}
             variant="outline"
             className="h-8 w-8 p-0"
             disabled={pages <= pageIndex + 1}
