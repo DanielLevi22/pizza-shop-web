@@ -15,9 +15,11 @@ export function AppLayout() {
         if (isAxiosError(error)) {
           const status = error.response?.status
           const code = error.response?.data.code
-
+          console.log('status', status)
           if (status === 401 && code === 'UNAUTHORIZED') {
             navigate('/sign-in', { replace: true })
+          } else {
+            throw error
           }
         }
       },
@@ -27,10 +29,12 @@ export function AppLayout() {
       api.interceptors.response.eject(interceptorId)
     }
   }, [navigate])
+
   return (
     <div className="flex min-h-screen flex-col antialiased">
       <Header />
-      <div className="flex-1 flex-col gap-4 p-8 pt-6">
+
+      <div className="flex flex-1 flex-col gap-4 p-8 pt-6">
         <Outlet />
       </div>
     </div>
