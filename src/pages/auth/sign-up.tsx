@@ -31,8 +31,8 @@ export function SignUp() {
   })
 
   async function handleSignUp(data: SignUpForm) {
-    await registerRestaurantFn(data)
     try {
+      await registerRestaurantFn(data)
       toast.success('Restaurante cadastrado com sucesso.', {
         action: {
           label: 'Login',
@@ -43,7 +43,7 @@ export function SignUp() {
       })
     } catch (error) {
       console.error(error)
-      toast.error('Erro ao cadastrar  restaurant.')
+      toast.error('Erro ao cadastrar  restaurante.')
     }
   }
   return (

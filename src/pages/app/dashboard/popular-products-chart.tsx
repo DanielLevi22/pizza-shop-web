@@ -3,7 +3,7 @@ import { BarChart, Loader2 } from 'lucide-react'
 import { Cell, Pie, PieChart, ResponsiveContainer } from 'recharts'
 import colors from 'tailwindcss/colors'
 
-import { getPopularProducts } from '@/api/get-propular-products'
+import { getPopularProducts } from '@/api/get-popular-products'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 // const DATA = [
 //   { product: 'Pepperoni', amount: 30 },
