@@ -11,6 +11,20 @@ export function Dashboard() {
   return (
     <>
       <Helmet title="Dashboard" />
+      <meta
+        property="og:image"
+        content="https://pizza-shop-web-rouge.vercel.app/opengraph.png"
+      />
+      <meta
+        property="og:url"
+        content="https://pizza-shop-web-rouge.vercel.app/pagina"
+      />
+      <meta property="og:type" content="website" />
+      <meta
+        name="twitter:image"
+        content="https://pizza-shop-web-rouge.vercel.app/opengraph.png"
+      />
+
       <div className="flex flex-col gap-4">
         <h1 className="text-3xl font-bold tracking-tighter">Dashboard</h1>
 
