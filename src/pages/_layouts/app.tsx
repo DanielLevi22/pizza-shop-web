@@ -14,13 +14,15 @@ export function AppLayout() {
       (error) => {
         if (isAxiosError(error)) {
           const status = error.response?.status
-          const code = error.response?.data.code
-          console.log('status', status)
-          if (status === 401 && code === 'UNAUTHORIZED') {
+          const code = error.response?.data.message
+
+          if (status === 401 && code === 'Unauthorized') {
             navigate('/sign-in', { replace: true })
           } else {
             throw error
           }
+        } else {
+          throw error
         }
       },
     )
@@ -33,7 +35,6 @@ export function AppLayout() {
   return (
     <div className="flex min-h-screen flex-col antialiased">
       <Header />
-
       <div className="flex flex-1 flex-col gap-4 p-8 pt-6">
         <Outlet />
       </div>
